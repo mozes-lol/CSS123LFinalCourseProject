@@ -2,15 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.group4finalcourseproject;
+package com.group4.applications;
 
 /**
  *
  * @author johnm
  */
-public class Group4FinalCourseProject {
+public class Startup {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Starting program");
     }
 }
