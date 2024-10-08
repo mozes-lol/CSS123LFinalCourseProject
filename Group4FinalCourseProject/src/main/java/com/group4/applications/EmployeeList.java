@@ -4,6 +4,8 @@
  */
 package com.group4.applications;
 
+import java.util.Set;
+
 /**
  *
  * @author johnm
@@ -15,6 +17,8 @@ public class EmployeeList extends javax.swing.JFrame {
      */
     public EmployeeList() {
         initComponents();
+        jTable1.setAutoCreateRowSorter(true);
+        
     }
 
     /**
