@@ -18,8 +18,19 @@ public class Performance {
     
     public void indicatePerformanceStatus()
     {
-        if (performanceRating >= 90) {performanceStatus = "EE";}
+        if (performanceRating > 100)
+        {
+            performanceStatus = "Error:RatingTooHigh";
+            System.out.println("ERROR: PERFORMANCE RATING EXCEEDS BEYOND 100");
+        }
+        else if (performanceRating >= 90) {performanceStatus = "EE";}
         else if (performanceRating >= 70) {performanceStatus = "ME";}
-        else {performanceStatus = "PIP";}
+        else if (performanceRating >= 0) {performanceStatus = "PIP";}
+        else
+        {
+            performanceStatus = "Error:RatingTooLow";
+            System.out.println("ERROR: PERFORMANCE RATING IS NEGATIVE");
+        }
+        
     }
 }
