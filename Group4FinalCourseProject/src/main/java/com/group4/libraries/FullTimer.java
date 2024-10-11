@@ -8,6 +8,7 @@ package com.group4.libraries;
  *
  * @author garps
  */
-public class Employee {
+public class FullTimer {
+    private String assignedOffice;
     
 }
