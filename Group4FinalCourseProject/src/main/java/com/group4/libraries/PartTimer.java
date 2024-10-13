@@ -8,7 +8,7 @@ package com.group4.libraries;
  *
  * @author garps
  */
-public class PartTimer extends Employee {
+public class PartTimer extends Employee_legacy {
     private String primaryAlternativeOccupation;
     private final double hourlyRate = 500;// initialize ko for easy logic pwede rin tanggalin if decided na manually input yung hourly rate...
     private int hourWork;//DINAGDAG KO LANG kasi i trhink mas doable skain pero if may mas oaky kayu method feel free to suggest
