@@ -56,7 +56,7 @@ public class Show extends javax.swing.JFrame implements ActionListener{
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
 
-        jButton1.setBackground(new java.awt.Color(255, 200, 193));
+        jButton1.setBackground(new java.awt.Color(255, 188, 188));
         jButton1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jButton1.setText("Add Employee");
         jButton1.setToolTipText("");
@@ -69,7 +69,7 @@ public class Show extends javax.swing.JFrame implements ActionListener{
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 200, 193));
+        jButton2.setBackground(new java.awt.Color(255, 188, 188));
         jButton2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jButton2.setText("Refresh List");
         jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -100,6 +100,7 @@ public class Show extends javax.swing.JFrame implements ActionListener{
         jPanel2.setBackground(new java.awt.Color(255, 228, 236));
 
         jTable1.setBackground(new java.awt.Color(255, 228, 236));
+        jTable1.setForeground(new java.awt.Color(255, 204, 204));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

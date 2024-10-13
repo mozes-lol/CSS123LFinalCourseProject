@@ -47,7 +47,7 @@ public class AddEmployee extends javax.swing.JFrame {
 
         jLabel5.setText("Occupation");
 
-        jButton1.setBackground(new java.awt.Color(255, 204, 204));
+        jButton1.setBackground(new java.awt.Color(255, 188, 188));
         jButton1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jButton1.setText("Submit");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
