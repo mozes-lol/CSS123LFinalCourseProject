@@ -8,7 +8,7 @@ package com.group4.libraries;
  *
  * @author Bianca
  */
-abstract class Employee implements SalaryDetails {
+abstract class Employee{
     protected String name;
     protected Department department;
     /* protected Performance performance; */
