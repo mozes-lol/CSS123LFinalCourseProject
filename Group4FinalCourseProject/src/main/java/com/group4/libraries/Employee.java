@@ -8,11 +8,10 @@ package com.group4.libraries;
  *
  * @author garps
  */
-abstract class Employee implements SalaryDetails {
+public class Employee {
     protected String name;
 
     public Employee(String name) {
         this.name = name;
     }
-    
 }

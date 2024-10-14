@@ -8,7 +8,21 @@ package com.group4.libraries;
  *
  * @author garps
  */
-public class FullTimer {
+public class FullTimer extends Employee implements SalaryDetails{
     private String assignedOffice;
+
+    public FullTimer(String assignedOffice, String name) {
+        super(name);
+        this.assignedOffice = assignedOffice;
+    }
+
+    @Override
+    public String computeSalary(String salaryAmount){
+       return salaryAmount;
+    }
     
+    public void writeEmployeeDescription()
+    {
+        
+    }
 }
