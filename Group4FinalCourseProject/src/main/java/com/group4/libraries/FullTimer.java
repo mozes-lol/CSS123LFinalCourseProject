@@ -16,6 +16,7 @@ public class FullTimer extends Employee implements SalaryDetails{
         this.assignedOffice = assignedOffice;
     }
 
+    @Override
     public String computeSalary(String salaryAmount){
        return salaryAmount;
     }

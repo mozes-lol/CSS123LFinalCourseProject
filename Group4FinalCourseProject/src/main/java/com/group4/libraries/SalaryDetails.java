@@ -10,5 +10,5 @@ package com.group4.libraries;
  */
 public interface SalaryDetails {
     int salary = 0; //I'm not sure if declaring variables in an interface works; Just giving this one a shot
-    public void computeSalary();
+    public String computeSalary(String salaryAmount);
 }
