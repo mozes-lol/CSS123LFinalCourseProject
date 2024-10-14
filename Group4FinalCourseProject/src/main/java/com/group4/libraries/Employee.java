@@ -9,20 +9,25 @@ package com.group4.libraries;
  * @author Bianca
  */
 abstract class Employee{
+    
     protected String name;
     protected Department department;
-    /* protected Performance performance; */
+    //protected Performance performance;
     protected String employeeDescription;
+    
     public Employee(String name) {
         this.name = name;
     }
+    
     // Constructor
-    public void Employee(Department department /** Performance performance **/
-    ) {
+    public void Employee(String name, Department department /** Performance performance **/)
+    {
+        this.name = name;
         this.department = department;
         /** this.performance = performance; **/
         this.employeeDescription = ""; // Can be set by subclasses later
     }
+    
     // Abstract method to be implemented by subclasses
     public abstract void writeEmployeeDescription();
     // Getter and setter for name
@@ -40,12 +45,10 @@ abstract class Employee{
     public void setEmployeeDescription(String employeeDescription) {
         this.employeeDescription = employeeDescription;
     }
-
     // Getter and setter for department
     public Department getDepartment() {
         return department;
     }
-
     public void setDepartment(Department department) {
         this.department = department;
     }
