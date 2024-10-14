@@ -12,7 +12,7 @@ abstract class Employee{
     
     protected String name;
     protected Department department;
-    //protected Performance performance;
+    Performance performance;
     protected String employeeDescription;
     
     public Employee(String name) {
@@ -20,11 +20,11 @@ abstract class Employee{
     }
     
     // Constructor
-    public void Employee(String name, Department department /** Performance performance **/)
+    public void Employee(String name, Department department, Performance performance)
     {
         this.name = name;
         this.department = department;
-        /** this.performance = performance; **/
+        this.performance = performance;
         this.employeeDescription = ""; // Can be set by subclasses later
     }
     
@@ -54,13 +54,10 @@ abstract class Employee{
     }
 
     // Getter and setter for performance
-    /**
-     * public Performance getPerformance() {
-     * return performance;
-     * }
-     * public void setPerformance(Performance performance) {
-     * this.performance = performance;
-     * }
-     **/
-
+    public Performance getPerformance() {
+    return performance;
+    }
+    public void setPerformance(Performance performance) {
+    this.performance = performance;
+    }
 }
