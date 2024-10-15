@@ -48,4 +48,33 @@ public class EmployeeList {
         
         employeeList.add(fullTimer);
     }
+        
+    public void newPartTimerEmployee
+        (
+            String partPrimaryAlternativeOccupation,
+            String departmentDepartmentName,
+            String departmentPosition,
+            boolean isPerformanceGraded,
+            int performancePerformanceRating,
+            String salaryDetailsSalaryAmount
+        )
+    {
+        // Full Timer Class
+        PartTimer partTimer = new PartTimer(partPrimaryAlternativeOccupation, "Employee");
+        // Department Class
+        partTimer.setDepartment(new Department());
+        partTimer.getDepartment().setDepartmentName(departmentDepartmentName);
+        partTimer.getDepartment().setPosition(departmentPosition);
+        // Performance Class
+        if (isPerformanceGraded == true)
+        {
+            partTimer.setPerformance(new Performance(performancePerformanceRating));
+            partTimer.getPerformance().indicatePerformanceStatus();
+        }
+        // Salary Details Class
+        partTimer.employeeDescription = "Salary: " + partTimer.computeSalary(salaryDetailsSalaryAmount) +
+                " Assigned Office: " + partTimer.getPrimaryAlternativeOccupation();
+        
+        employeeList.add(partTimer);
+    }
 }

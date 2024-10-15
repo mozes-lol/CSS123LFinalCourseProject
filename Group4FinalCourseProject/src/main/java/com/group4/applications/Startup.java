@@ -12,8 +12,14 @@ import com.group4.libraries.EmployeeList;
  */
 public class Startup {
     public static void main(String[] args) {
+        // this is for testing only
         EmployeeList employeeList = new EmployeeList();
         employeeList.newFullTimerEmployee("A", "B", "C", true, 85, "500");
+        employeeList.newFullTimerEmployee("A", "B", "C", true, 85, "500");
+        employeeList.newFullTimerEmployee("A", "B", "C", true, 85, "500");
+        employeeList.newPartTimerEmployee("A", "B", "C", true, 85, "500");
+        employeeList.newPartTimerEmployee("A", "B", "C", true, 85, "500");
+        employeeList.newPartTimerEmployee("A", "B", "C", true, 85, "500");
         employeeList.newFullTimerEmployee("A", "B", "C", true, 85, "500");
         employeeList.newFullTimerEmployee("A", "B", "C", true, 85, "500");
         System.out.println(employeeList.getEmployeeList());
