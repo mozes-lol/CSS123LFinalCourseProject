@@ -4,6 +4,8 @@
  */
 package com.group4.libraries;
 
+import com.group4.libraries.Department;
+
 /**
  *
  * @author Bianca
