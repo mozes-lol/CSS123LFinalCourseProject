@@ -14,7 +14,7 @@ abstract public class Employee{
     
     protected String name;
     protected Department department;
-    Performance performance;
+    protected Performance performance;
     protected String employeeDescription;
     
     public Employee(String name) {
