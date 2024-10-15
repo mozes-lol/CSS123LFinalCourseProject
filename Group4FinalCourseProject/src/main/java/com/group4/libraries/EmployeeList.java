@@ -6,6 +6,7 @@ package com.group4.libraries;
 
 import com.group4.libraries.FullTimer;
 import com.group4.libraries.Department;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,7 +14,13 @@ import com.group4.libraries.Department;
  */
 public class EmployeeList {
     
-    public void createFullTimerEmployee
+    ArrayList<Employee> employeeList = new ArrayList<Employee>();
+
+    public ArrayList<Employee> getEmployeeList() {
+        return employeeList;
+    }
+    
+    public void newFullTimerEmployee
         (
             String fullTimerAssignedOffice,
             String departmentDepartmentName,
@@ -38,5 +45,7 @@ public class EmployeeList {
         // Salary Details Class
         fullTimer.employeeDescription = "Salary: " + fullTimer.computeSalary(salaryDetailsSalaryAmount) +
                 " Assigned Office: " + fullTimer.getAssignedOffice();
+        
+        employeeList.add(fullTimer);
     }
 }
