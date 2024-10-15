@@ -8,7 +8,7 @@ package com.group4.libraries;
  *
  * @author Bianca
  */
-abstract class Employee{
+abstract public class Employee{
     
     protected String name;
     protected Department department;
