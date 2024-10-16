@@ -49,13 +49,13 @@ public class AddEmployee extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Office = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        Rating = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         Submit = new javax.swing.JButton();
         PartTimer = new javax.swing.JRadioButton();
         FullTimer = new javax.swing.JRadioButton();
         BoxPerformance = new javax.swing.JCheckBox();
         Exit = new javax.swing.JButton();
+        Rating = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -102,6 +102,9 @@ public class AddEmployee extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 SalaryKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                SalaryKeyTyped(evt);
+            }
         });
 
         jLabel2.setText("Department");
@@ -120,13 +123,6 @@ public class AddEmployee extends javax.swing.JFrame {
         });
 
         jLabel3.setText("Department Position");
-
-        Rating.setEnabled(false);
-        Rating.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                RatingKeyReleased(evt);
-            }
-        });
 
         jLabel4.setText("Salary");
 
@@ -193,6 +189,16 @@ public class AddEmployee extends javax.swing.JFrame {
             }
         });
 
+        Rating.setEnabled(false);
+        Rating.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                RatingKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                RatingKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -213,21 +219,21 @@ public class AddEmployee extends javax.swing.JFrame {
                                 .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel6)
-                                    .addGap(187, 187, 187)))
+                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(21, 21, 21)
                                 .addComponent(BoxPerformance, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(Office)
-                                    .addComponent(Salary, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Position, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Department)
-                                    .addComponent(Rating)
-                                    .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(Name, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                                    .addComponent(Salary)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(119, 119, 119)
+                                .addComponent(Rating)))
                         .addGap(18, 18, 18)
                         .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(26, 26, 26))
@@ -250,7 +256,7 @@ public class AddEmployee extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Position, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Salary, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -262,10 +268,11 @@ public class AddEmployee extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Office, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BoxPerformance)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(BoxPerformance)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(Rating, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -497,36 +504,6 @@ public class AddEmployee extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_OfficeKeyReleased
 
-    private void RatingKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RatingKeyReleased
-        if (Name.getText().length()>0 
-                && Department.getText().length()>0 
-                && Position.getText().length()>0 
-                && Salary.getText().length()>0 
-                && FullTimer.isSelected()
-                && Office.getText().length()>0 
-                && BoxPerformance.isSelected()
-                && Rating.getText().length()>0){          
-            Submit.setEnabled(true);
-        }else if (Name.getText().length()>0 
-                && Department.getText().length()>0 
-                && Position.getText().length()>0 
-                && Salary.getText().length()>0 
-                && PartTimer.isSelected()
-                && BoxPerformance.isSelected()
-                && Rating.getText().length()>0){
-            Submit.setEnabled(true);
-        }else if (Name.getText().length()>0 
-                && Department.getText().length()>0 
-                && Position.getText().length()>0 
-                && Salary.getText().length()>0 
-                && FullTimer.isSelected()
-                && Office.getText().length()>0){
-            Submit.setEnabled(true);
-        }else {
-            Submit.setEnabled(false);
-        }
-    }//GEN-LAST:event_RatingKeyReleased
-
     private void BoxPerformanceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BoxPerformanceKeyReleased
 
     }//GEN-LAST:event_BoxPerformanceKeyReleased
@@ -546,6 +523,28 @@ public class AddEmployee extends javax.swing.JFrame {
         Show pi = new Show();
         pi.setVisible(true);
     }//GEN-LAST:event_ExitActionPerformed
+
+    private void SalaryKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SalaryKeyTyped
+        try{
+            Double.parseDouble(Salary.getText()+evt.getKeyChar());
+        } catch(NumberFormatException e){
+            Toolkit.getDefaultToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_SalaryKeyTyped
+
+    private void RatingKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RatingKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RatingKeyReleased
+
+    private void RatingKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RatingKeyTyped
+        try{
+            Double.parseDouble(Salary.getText()+evt.getKeyChar());
+        } catch(NumberFormatException e){
+            Toolkit.getDefaultToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_RatingKeyTyped
 
     /**
      * @param args the command line arguments
