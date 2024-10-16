@@ -72,7 +72,7 @@ public class AddEmployee extends javax.swing.JFrame {
 
         jLabel3.setText("Department Position");
 
-        Rating.setEditable(false);
+        Rating.setEnabled(false);
 
         jLabel4.setText("Salary");
 
@@ -207,10 +207,11 @@ public class AddEmployee extends javax.swing.JFrame {
     }//GEN-LAST:event_PositionActionPerformed
 
     private void BoxPerformanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxPerformanceActionPerformed
+        System.out.println("test");
         if (BoxPerformance.isSelected()){
-            Rating.setEditable(true);
+            Rating.setEnabled(true);
         } else {
-            Rating.setEditable(false);
+            Rating.setEnabled(false);
             Rating.setText(" ");
         }
         
