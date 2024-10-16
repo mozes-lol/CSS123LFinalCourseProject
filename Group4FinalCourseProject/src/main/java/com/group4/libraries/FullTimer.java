@@ -25,4 +25,12 @@ public class FullTimer extends Employee implements SalaryDetails{
     {
         
     }
+
+    public String getAssignedOffice() {
+        return assignedOffice;
+    }
+
+    
+    
+    
 }

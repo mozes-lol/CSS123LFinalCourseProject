@@ -4,15 +4,17 @@
  */
 package com.group4.libraries;
 
+import com.group4.libraries.Department;
+
 /**
  *
  * @author Bianca
  */
-abstract class Employee{
+abstract public class Employee{
     
     protected String name;
     protected Department department;
-    Performance performance;
+    protected Performance performance;
     protected String employeeDescription;
     
     public Employee(String name) {

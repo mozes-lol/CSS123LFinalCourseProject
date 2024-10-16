@@ -4,13 +4,24 @@
 
 package com.group4.applications;
 
+import com.group4.libraries.EmployeeList;
+
 /**
  *
  * @author johnm
  */
 public class Startup {
-
     public static void main(String[] args) {
-        System.out.println("Starting program");
+        // this is for testing only
+        EmployeeList employeeList = new EmployeeList();
+        employeeList.newFullTimerEmployee("A", "B", "C", true, 85, "500");
+        employeeList.newFullTimerEmployee("A", "B", "C", true, 85, "500");
+        employeeList.newFullTimerEmployee("A", "B", "C", true, 85, "500");
+        employeeList.newPartTimerEmployee("A", "B", "C", true, 85, "500");
+        employeeList.newPartTimerEmployee("A", "B", "C", true, 85, "500");
+        employeeList.newPartTimerEmployee("A", "B", "C", true, 85, "500");
+        employeeList.newFullTimerEmployee("A", "B", "C", true, 85, "500");
+        employeeList.newFullTimerEmployee("A", "B", "C", true, 85, "500");
+        System.out.println(employeeList.getEmployeeList());
     }
 }
