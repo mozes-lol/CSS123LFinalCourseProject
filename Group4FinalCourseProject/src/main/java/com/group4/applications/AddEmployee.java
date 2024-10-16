@@ -4,6 +4,11 @@
  */
 package com.group4.applications;
 
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+
 /**
  *
  * @author Andrew
@@ -15,8 +20,14 @@ public class AddEmployee extends javax.swing.JFrame {
      */
     public AddEmployee() {
         initComponents();
+
     }
 
+    public void close(){
+        WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,8 +55,9 @@ public class AddEmployee extends javax.swing.JFrame {
         PartTimer = new javax.swing.JRadioButton();
         FullTimer = new javax.swing.JRadioButton();
         BoxPerformance = new javax.swing.JCheckBox();
+        Exit = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(237, 232, 208));
 
@@ -53,32 +65,75 @@ public class AddEmployee extends javax.swing.JFrame {
 
         jLabel6.setText("Performance Rating:");
 
+        Name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NameActionPerformed(evt);
+            }
+        });
+        Name.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NameKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                none(evt);
+            }
+        });
+
+        Department.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                DepartmentKeyReleased(evt);
+            }
+        });
+
         Position.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PositionActionPerformed(evt);
             }
         });
+        Position.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                PositionKeyReleased(evt);
+            }
+        });
 
         jLabel1.setText("Name");
+
+        Salary.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SalaryKeyReleased(evt);
+            }
+        });
 
         jLabel2.setText("Department");
 
         Office.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Office.setEnabled(false);
         Office.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OfficeActionPerformed(evt);
+            }
+        });
+        Office.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                OfficeKeyReleased(evt);
             }
         });
 
         jLabel3.setText("Department Position");
 
         Rating.setEnabled(false);
+        Rating.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                RatingKeyReleased(evt);
+            }
+        });
 
         jLabel4.setText("Salary");
 
         Submit.setBackground(new java.awt.Color(201, 197, 177));
         Submit.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         Submit.setText("Submit");
+        Submit.setEnabled(false);
         Submit.setFocusable(false);
         Submit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -93,6 +148,21 @@ public class AddEmployee extends javax.swing.JFrame {
 
         buttonGroup1.add(PartTimer);
         PartTimer.setText("Part-Time");
+        PartTimer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                PartTimerMouseReleased(evt);
+            }
+        });
+        PartTimer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PartTimerActionPerformed(evt);
+            }
+        });
+        PartTimer.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                PartTimerKeyReleased(evt);
+            }
+        });
 
         buttonGroup1.add(FullTimer);
         FullTimer.setText("Full_Time");
@@ -109,51 +179,68 @@ public class AddEmployee extends javax.swing.JFrame {
                 BoxPerformanceActionPerformed(evt);
             }
         });
+        BoxPerformance.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BoxPerformanceKeyReleased(evt);
+            }
+        });
+
+        Exit.setBackground(new java.awt.Color(201, 197, 177));
+        Exit.setText("Exit");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Submit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(187, 187, 187)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addComponent(Submit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(46, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
+                        .addGap(22, 22, 22)
                         .addComponent(PartTimer, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(FullTimer, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(BoxPerformance, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(Office, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                            .addComponent(Salary, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Position, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Department, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                            .addComponent(Rating, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                            .addComponent(Name))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel6)
+                                    .addGap(187, 187, 187)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(BoxPerformance, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(Office)
+                                    .addComponent(Salary, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Position, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Department)
+                                    .addComponent(Rating)
+                                    .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(18, 18, 18)
+                        .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -207,13 +294,17 @@ public class AddEmployee extends javax.swing.JFrame {
     }//GEN-LAST:event_PositionActionPerformed
 
     private void BoxPerformanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxPerformanceActionPerformed
-        System.out.println("test");
+
         if (BoxPerformance.isSelected()){
             Rating.setEnabled(true);
-        } else {
+        }else if (PartTimer.isSelected() && !BoxPerformance.isSelected()){
+            Submit.setEnabled(false);
             Rating.setEnabled(false);
             Rating.setText(" ");
-        }
+        }else {
+            Rating.setEnabled(false);
+            Rating.setText(" ");
+        } 
         
 //      Rating.setEditable(BoxPerformance.isSelected());
         
@@ -221,27 +312,240 @@ public class AddEmployee extends javax.swing.JFrame {
 
     private void FullTimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FullTimerActionPerformed
         if (FullTimer.isSelected()){
-            Office.setEditable(true);
-        } else {
-            Office.setEditable(false);
-            Office.setText(" ");
+            Office.setEnabled(true);
         }
     }//GEN-LAST:event_FullTimerActionPerformed
 
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
-        //type your code above for array purposes the setText(" ")
+ 
+        Name.setText("");
+        Department.setText("");
+        Position.setText("");
+        Salary.setText("");
+        Office.setText("");
+        Rating.setText("");
         
-        Name.setText(" ");
-        Department.setText(" ");
-        Position.setText(" ");
-        Salary.setText(" ");
-        Office.setText(" ");
-        Rating.setText(" ");
+        Submit.setEnabled(false);
     }//GEN-LAST:event_SubmitActionPerformed
 
     private void OfficeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OfficeActionPerformed
 
     }//GEN-LAST:event_OfficeActionPerformed
+
+    private void PartTimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PartTimerActionPerformed
+        if (PartTimer.isSelected()){
+            Office.setEnabled(false);
+            Office.setText(" ");
+        }
+    }//GEN-LAST:event_PartTimerActionPerformed
+
+    private void none(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_none
+        // TODO add your handling code here:
+    }//GEN-LAST:event_none
+
+    private void NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NameActionPerformed
+
+    private void NameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NameKeyReleased
+        if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0 
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){          
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && PartTimer.isSelected()
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0){
+            Submit.setEnabled(true);
+        }else {
+            Submit.setEnabled(false);
+        }
+    }//GEN-LAST:event_NameKeyReleased
+
+    private void DepartmentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DepartmentKeyReleased
+        if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0 
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){          
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && PartTimer.isSelected()
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0){
+            Submit.setEnabled(true);
+        }else {
+            Submit.setEnabled(false);
+        }
+    }//GEN-LAST:event_DepartmentKeyReleased
+
+    private void PositionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PositionKeyReleased
+        if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0 
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){          
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && PartTimer.isSelected()
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0){
+            Submit.setEnabled(true);
+        }else {
+            Submit.setEnabled(false);
+        }
+    }//GEN-LAST:event_PositionKeyReleased
+
+    private void SalaryKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SalaryKeyReleased
+        if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0 
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){          
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && PartTimer.isSelected()
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0){
+            Submit.setEnabled(true);
+        }else {
+            Submit.setEnabled(false);
+        }
+    }//GEN-LAST:event_SalaryKeyReleased
+
+    private void OfficeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OfficeKeyReleased
+        if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0 
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){          
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && PartTimer.isSelected()
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0){
+            Submit.setEnabled(true);
+        }else {
+            Submit.setEnabled(false);
+        }
+    }//GEN-LAST:event_OfficeKeyReleased
+
+    private void RatingKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RatingKeyReleased
+        if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0 
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){          
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && PartTimer.isSelected()
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0){
+            Submit.setEnabled(true);
+        }else {
+            Submit.setEnabled(false);
+        }
+    }//GEN-LAST:event_RatingKeyReleased
+
+    private void BoxPerformanceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BoxPerformanceKeyReleased
+
+    }//GEN-LAST:event_BoxPerformanceKeyReleased
+
+    private void PartTimerKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PartTimerKeyReleased
+
+    }//GEN-LAST:event_PartTimerKeyReleased
+
+    private void PartTimerMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PartTimerMouseReleased
+        if (PartTimer.isSelected() && !BoxPerformance.isSelected()){
+            Submit.setEnabled(false);
+        }
+    }//GEN-LAST:event_PartTimerMouseReleased
+
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+        close();
+        Show pi = new Show();
+        pi.setVisible(true);
+    }//GEN-LAST:event_ExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,6 +585,7 @@ public class AddEmployee extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox BoxPerformance;
     private javax.swing.JTextField Department;
+    private javax.swing.JButton Exit;
     private javax.swing.JRadioButton FullTimer;
     private javax.swing.JTextField Name;
     private javax.swing.JTextField Office;

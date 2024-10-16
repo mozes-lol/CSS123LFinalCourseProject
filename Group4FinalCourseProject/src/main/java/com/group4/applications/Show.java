@@ -4,8 +4,10 @@
  */
 package com.group4.applications;
 
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 
 
@@ -25,13 +27,24 @@ public class Show extends javax.swing.JFrame implements ActionListener{
             System.out.println("Testing");
         }
     }
-
+    
+    public void close(){
+        WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
+    }
     
     /**
      * Creates new form Show
      */
     public Show() {
         initComponents();
+        
+        jTable1.getColumnModel().getColumn(0).setPreferredWidth(150);
+        jTable1.getColumnModel().getColumn(1).setPreferredWidth(100);
+        jTable1.getColumnModel().getColumn(2).setPreferredWidth(100);
+        jTable1.getColumnModel().getColumn(3).setPreferredWidth(100);
+        jTable1.getColumnModel().getColumn(4).setPreferredWidth(100);
+        jTable1.getColumnModel().getColumn(5).setPreferredWidth(50);
     }
     
     /**
@@ -50,13 +63,13 @@ public class Show extends javax.swing.JFrame implements ActionListener{
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Employee List");
         setBackground(new java.awt.Color(255, 153, 153));
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(201, 197, 177));
 
-        jButton1.setBackground(new java.awt.Color(255, 188, 188));
+        jButton1.setBackground(new java.awt.Color(201, 197, 177));
         jButton1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jButton1.setText("Add Employee");
         jButton1.setToolTipText("");
@@ -69,7 +82,7 @@ public class Show extends javax.swing.JFrame implements ActionListener{
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 188, 188));
+        jButton2.setBackground(new java.awt.Color(201, 197, 177));
         jButton2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jButton2.setText("Refresh List");
         jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -97,16 +110,16 @@ public class Show extends javax.swing.JFrame implements ActionListener{
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(255, 228, 236));
+        jPanel2.setBackground(new java.awt.Color(237, 232, 208));
 
-        jTable1.setBackground(new java.awt.Color(255, 228, 236));
+        jTable1.setBackground(new java.awt.Color(237, 232, 208));
         jTable1.setForeground(new java.awt.Color(255, 204, 204));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Name", "Department", "Position", "Assigned Office", "Occupation", "Rating"
+                "Name", "Department", "Position", "Assigned Office", "Salary", "Rating"
             }
         ) {
             Class[] types = new Class [] {
@@ -128,7 +141,7 @@ public class Show extends javax.swing.JFrame implements ActionListener{
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 658, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -165,7 +178,9 @@ public class Show extends javax.swing.JFrame implements ActionListener{
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        close();
+        AddEmployee pi = new AddEmployee();
+        pi.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
