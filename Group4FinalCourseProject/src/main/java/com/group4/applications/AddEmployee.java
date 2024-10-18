@@ -16,7 +16,7 @@ import com.group4.libraries.EmployeeList;
  * @author Andrew
  */
 public class AddEmployee extends javax.swing.JFrame {
-
+EmployeeList employeeList = new EmployeeList();
     /**
      * Creates new form AddEmployee
      */
@@ -327,7 +327,62 @@ public class AddEmployee extends javax.swing.JFrame {
     }//GEN-LAST:event_FullTimerActionPerformed
 
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
-        EmployeeList employeeList = new EmployeeList();
+        
+        if (FullTimer.isSelected())
+        {
+            if (BoxPerformance.isSelected())
+            {
+                employeeList.newFullTimerEmployee
+                    (
+                        textField_specifics.getText(),
+                        Department.getText(),
+                        Position.getText(),
+                        BoxPerformance.isSelected(),
+                        Integer.parseInt(Rating.getText()),
+                        Salary.getText()
+                    );                
+            }
+            else
+            {
+                employeeList.newFullTimerEmployee
+                    (
+                        textField_specifics.getText(),
+                        Department.getText(),
+                        Position.getText(),
+                        BoxPerformance.isSelected(),
+                        0,
+                        Salary.getText()
+                    );
+            }
+        }
+        else if (PartTimer.isSelected())
+        {
+            if (BoxPerformance.isSelected())
+            {
+                employeeList.newPartTimerEmployee
+                    (
+                        textField_specifics.getText(),
+                        Department.getText(),
+                        Position.getText(),
+                        BoxPerformance.isSelected(),
+                        Integer.parseInt(Rating.getText()),
+                        Salary.getText()
+                    );                
+            }
+            else
+            {
+                employeeList.newPartTimerEmployee
+                    (
+                        textField_specifics.getText(),
+                        Department.getText(),
+                        Position.getText(),
+                        BoxPerformance.isSelected(),
+                        -1,
+                        Salary.getText()
+                    );
+            }
+        }
+        System.out.println(employeeList.getEmployeeList());
         // reset all text values to null
         Name.setText("");
         Department.setText("");
@@ -336,10 +391,11 @@ public class AddEmployee extends javax.swing.JFrame {
         textField_specifics.setText("");
         Rating.setText("");
         
-        // "close" the window
         Submit.setEnabled(false);
         
-        
+        close();
+        Show pi = new Show();
+        pi.setVisible(true);
     }//GEN-LAST:event_SubmitActionPerformed
 
     private void textField_specificsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField_specificsActionPerformed

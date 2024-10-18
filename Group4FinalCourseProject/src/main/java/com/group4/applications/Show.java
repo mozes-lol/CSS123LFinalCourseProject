@@ -4,10 +4,12 @@
  */
 package com.group4.applications;
 
+import com.group4.libraries.Employee;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
 import javax.swing.JButton;
 
 
@@ -16,6 +18,8 @@ import javax.swing.JButton;
  * @author Andrew
  */
 public class Show extends javax.swing.JFrame implements ActionListener{
+    
+    ArrayList<Employee> employeeList = new ArrayList<Employee>();
     
     public Show(JButton jButton1, JButton jButton2) {
         jButton1.addActionListener(this);
@@ -58,7 +62,7 @@ public class Show extends javax.swing.JFrame implements ActionListener{
 
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButton_RefreshList = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -82,14 +86,14 @@ public class Show extends javax.swing.JFrame implements ActionListener{
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(201, 197, 177));
-        jButton2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jButton2.setText("Refresh List");
-        jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton2.setFocusable(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton_RefreshList.setBackground(new java.awt.Color(201, 197, 177));
+        jButton_RefreshList.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jButton_RefreshList.setText("Refresh List");
+        jButton_RefreshList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton_RefreshList.setFocusable(false);
+        jButton_RefreshList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton_RefreshListActionPerformed(evt);
             }
         });
 
@@ -98,7 +102,7 @@ public class Show extends javax.swing.JFrame implements ActionListener{
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
-            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton_RefreshList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,7 +110,7 @@ public class Show extends javax.swing.JFrame implements ActionListener{
                 .addGap(96, 96, 96)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton_RefreshList, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -173,9 +177,9 @@ public class Show extends javax.swing.JFrame implements ActionListener{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton_RefreshListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_RefreshListActionPerformed
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButton_RefreshListActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         close();
@@ -220,7 +224,7 @@ public class Show extends javax.swing.JFrame implements ActionListener{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton_RefreshList;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
