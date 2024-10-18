@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class EmployeeList {
     
-    ArrayList<Employee> employeeList = new ArrayList<Employee>();
+    public static ArrayList<Employee> employeeList = new ArrayList<Employee>();
 
     public ArrayList<Employee> getEmployeeList() {
         return employeeList;
