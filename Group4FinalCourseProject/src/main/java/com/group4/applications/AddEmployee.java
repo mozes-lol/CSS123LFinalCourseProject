@@ -8,6 +8,8 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
+import com.group4.libraries.Employee;
+import com.group4.libraries.EmployeeList;
 
 /**
  *
