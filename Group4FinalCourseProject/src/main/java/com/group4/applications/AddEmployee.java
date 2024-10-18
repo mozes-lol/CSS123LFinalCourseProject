@@ -4,6 +4,11 @@
  */
 package com.group4.applications;
 
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+
 /**
  *
  * @author Andrew
@@ -15,8 +20,14 @@ public class AddEmployee extends javax.swing.JFrame {
      */
     public AddEmployee() {
         initComponents();
+
     }
 
+    public void close(){
+        WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,109 +37,245 @@ public class AddEmployee extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        Name = new javax.swing.JTextField();
+        Department = new javax.swing.JTextField();
+        Position = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        Salary = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        Office = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        Submit = new javax.swing.JButton();
+        PartTimer = new javax.swing.JRadioButton();
+        FullTimer = new javax.swing.JRadioButton();
+        BoxPerformance = new javax.swing.JCheckBox();
+        Exit = new javax.swing.JButton();
+        Rating = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(237, 232, 208));
 
-        jLabel5.setText("Occupation");
+        jLabel5.setText("Assigned Office");
 
-        jButton1.setBackground(new java.awt.Color(255, 188, 188));
-        jButton1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jButton1.setText("Submit");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton1MouseEntered(evt);
+        jLabel6.setText("Performance Rating:");
+
+        Name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NameActionPerformed(evt);
+            }
+        });
+        Name.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NameKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                none(evt);
             }
         });
 
-        jLabel6.setText("Rating");
+        Department.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                DepartmentKeyReleased(evt);
+            }
+        });
+
+        Position.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PositionActionPerformed(evt);
+            }
+        });
+        Position.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                PositionKeyReleased(evt);
+            }
+        });
 
         jLabel1.setText("Name");
 
+        Salary.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SalaryKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                SalaryKeyTyped(evt);
+            }
+        });
+
         jLabel2.setText("Department");
 
-        jLabel3.setText("Position");
+        Office.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Office.setEnabled(false);
+        Office.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OfficeActionPerformed(evt);
+            }
+        });
+        Office.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                OfficeKeyReleased(evt);
+            }
+        });
 
-        jLabel4.setText("Assigned Office");
+        jLabel3.setText("Department Position");
+
+        jLabel4.setText("Salary");
+
+        Submit.setBackground(new java.awt.Color(201, 197, 177));
+        Submit.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        Submit.setText("Submit");
+        Submit.setEnabled(false);
+        Submit.setFocusable(false);
+        Submit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SubmitMouseEntered(evt);
+            }
+        });
+        Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(PartTimer);
+        PartTimer.setText("Part-Time");
+        PartTimer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                PartTimerMouseReleased(evt);
+            }
+        });
+        PartTimer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PartTimerActionPerformed(evt);
+            }
+        });
+        PartTimer.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                PartTimerKeyReleased(evt);
+            }
+        });
+
+        buttonGroup1.add(FullTimer);
+        FullTimer.setText("Full_Time");
+        FullTimer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FullTimerActionPerformed(evt);
+            }
+        });
+
+        BoxPerformance.setText("Grade Employee's Performance");
+        BoxPerformance.setFocusable(false);
+        BoxPerformance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoxPerformanceActionPerformed(evt);
+            }
+        });
+        BoxPerformance.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BoxPerformanceKeyReleased(evt);
+            }
+        });
+
+        Exit.setBackground(new java.awt.Color(201, 197, 177));
+        Exit.setText("Exit");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
+
+        Rating.setEnabled(false);
+        Rating.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                RatingKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                RatingKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Submit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap(46, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField5))
+                        .addGap(22, 22, 22)
+                        .addComponent(PartTimer, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(FullTimer, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(47, 47, 47))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(BoxPerformance, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(Office)
+                                    .addComponent(Position, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Department)
+                                    .addComponent(Name, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                                    .addComponent(Salary)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(119, 119, 119)
+                                .addComponent(Rating)))
+                        .addGap(18, 18, 18)
+                        .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
+                    .addComponent(Department, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Position, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Salary, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PartTimer)
+                    .addComponent(FullTimer))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Office, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(BoxPerformance)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Rating, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -139,15 +286,265 @@ public class AddEmployee extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+    private void SubmitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1MouseEntered
+    }//GEN-LAST:event_SubmitMouseEntered
+
+    private void PositionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PositionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PositionActionPerformed
+
+    private void BoxPerformanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxPerformanceActionPerformed
+
+        if (BoxPerformance.isSelected()){
+            Rating.setEnabled(true);
+        }else if (PartTimer.isSelected() && !BoxPerformance.isSelected()){
+            Submit.setEnabled(false);
+            Rating.setEnabled(false);
+            Rating.setText(" ");
+        }else {
+            Rating.setEnabled(false);
+            Rating.setText(" ");
+        } 
+        
+//      Rating.setEditable(BoxPerformance.isSelected());
+        
+    }//GEN-LAST:event_BoxPerformanceActionPerformed
+
+    private void FullTimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FullTimerActionPerformed
+        if (FullTimer.isSelected()){
+            Office.setEnabled(true);
+        }
+    }//GEN-LAST:event_FullTimerActionPerformed
+
+    private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
+ 
+        Name.setText("");
+        Department.setText("");
+        Position.setText("");
+        Salary.setText("");
+        Office.setText("");
+        Rating.setText("");
+        
+        Submit.setEnabled(false);
+    }//GEN-LAST:event_SubmitActionPerformed
+
+    private void OfficeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OfficeActionPerformed
+
+    }//GEN-LAST:event_OfficeActionPerformed
+
+    private void PartTimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PartTimerActionPerformed
+        if (PartTimer.isSelected()){
+            Office.setEnabled(false);
+            Office.setText(" ");
+        }
+    }//GEN-LAST:event_PartTimerActionPerformed
+
+    private void none(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_none
+        // TODO add your handling code here:
+    }//GEN-LAST:event_none
+
+    private void NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NameActionPerformed
+
+    private void NameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NameKeyReleased
+        if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0 
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){          
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && PartTimer.isSelected()
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0){
+            Submit.setEnabled(true);
+        }else {
+            Submit.setEnabled(false);
+        }
+    }//GEN-LAST:event_NameKeyReleased
+
+    private void DepartmentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DepartmentKeyReleased
+        if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0 
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){          
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && PartTimer.isSelected()
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0){
+            Submit.setEnabled(true);
+        }else {
+            Submit.setEnabled(false);
+        }
+    }//GEN-LAST:event_DepartmentKeyReleased
+
+    private void PositionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PositionKeyReleased
+        if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0 
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){          
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && PartTimer.isSelected()
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0){
+            Submit.setEnabled(true);
+        }else {
+            Submit.setEnabled(false);
+        }
+    }//GEN-LAST:event_PositionKeyReleased
+
+    private void SalaryKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SalaryKeyReleased
+        if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0 
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){          
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && PartTimer.isSelected()
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0){
+            Submit.setEnabled(true);
+        }else {
+            Submit.setEnabled(false);
+        }
+    }//GEN-LAST:event_SalaryKeyReleased
+
+    private void OfficeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OfficeKeyReleased
+        if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0 
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){          
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && PartTimer.isSelected()
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && Office.getText().length()>0){
+            Submit.setEnabled(true);
+        }else {
+            Submit.setEnabled(false);
+        }
+    }//GEN-LAST:event_OfficeKeyReleased
+
+    private void BoxPerformanceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BoxPerformanceKeyReleased
+
+    }//GEN-LAST:event_BoxPerformanceKeyReleased
+
+    private void PartTimerKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PartTimerKeyReleased
+
+    }//GEN-LAST:event_PartTimerKeyReleased
+
+    private void PartTimerMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PartTimerMouseReleased
+        if (PartTimer.isSelected() && !BoxPerformance.isSelected()){
+            Submit.setEnabled(false);
+        }
+    }//GEN-LAST:event_PartTimerMouseReleased
+
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+        close();
+        Show pi = new Show();
+        pi.setVisible(true);
+    }//GEN-LAST:event_ExitActionPerformed
+
+    private void SalaryKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SalaryKeyTyped
+        try{
+            Double.parseDouble(Salary.getText()+evt.getKeyChar());
+        } catch(NumberFormatException e){
+            Toolkit.getDefaultToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_SalaryKeyTyped
+
+    private void RatingKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RatingKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RatingKeyReleased
+
+    private void RatingKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RatingKeyTyped
+        try{
+            Double.parseDouble(Salary.getText()+evt.getKeyChar());
+        } catch(NumberFormatException e){
+            Toolkit.getDefaultToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_RatingKeyTyped
 
     /**
      * @param args the command line arguments
@@ -185,7 +582,18 @@ public class AddEmployee extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox BoxPerformance;
+    private javax.swing.JTextField Department;
+    private javax.swing.JButton Exit;
+    private javax.swing.JRadioButton FullTimer;
+    private javax.swing.JTextField Name;
+    private javax.swing.JTextField Office;
+    private javax.swing.JRadioButton PartTimer;
+    private javax.swing.JTextField Position;
+    private javax.swing.JTextField Rating;
+    private javax.swing.JTextField Salary;
+    private javax.swing.JButton Submit;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -193,11 +601,5 @@ public class AddEmployee extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }
