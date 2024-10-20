@@ -143,8 +143,10 @@ EmployeeList employeeList = new EmployeeList();
             }
         });
 
+        PartTimer.setBackground(new java.awt.Color(237, 232, 208));
         buttonGroup1.add(PartTimer);
         PartTimer.setText("Part-Time");
+        PartTimer.setFocusable(false);
         PartTimer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 PartTimerMouseReleased(evt);
@@ -161,15 +163,18 @@ EmployeeList employeeList = new EmployeeList();
             }
         });
 
+        FullTimer.setBackground(new java.awt.Color(237, 232, 208));
         buttonGroup1.add(FullTimer);
         FullTimer.setSelected(true);
         FullTimer.setText("Full_Time");
+        FullTimer.setFocusable(false);
         FullTimer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FullTimerActionPerformed(evt);
             }
         });
 
+        BoxPerformance.setBackground(new java.awt.Color(237, 232, 208));
         BoxPerformance.setText("Grade Employee's Performance");
         BoxPerformance.setFocusable(false);
         BoxPerformance.addActionListener(new java.awt.event.ActionListener() {
@@ -205,15 +210,16 @@ EmployeeList employeeList = new EmployeeList();
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Submit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Submit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(PartTimer, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(FullTimer, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(FullTimer, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 257, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -221,7 +227,7 @@ EmployeeList employeeList = new EmployeeList();
                                 .addComponent(label_specifics, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -234,25 +240,26 @@ EmployeeList employeeList = new EmployeeList();
                                     .addComponent(textField_specifics, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(Position)
                                     .addComponent(Department, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                                    .addComponent(Salary, javax.swing.GroupLayout.Alignment.TRAILING))))
-                        .addGap(18, 18, 18)
-                        .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(26, 26, 26))
+                                    .addComponent(Name, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Salary, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Exit)
+                        .addGap(26, 26, 26))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Department, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Department, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -322,6 +329,19 @@ EmployeeList employeeList = new EmployeeList();
         if (FullTimer.isSelected()){
             label_specifics.setText("Assigned Office: ");
             textField_specifics.setText("");
+        }
+        
+        if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && PartTimer.isSelected()
+                && textField_specifics.getText().length()>0 
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){          
+            Submit.setEnabled(true);   
+        }else {
+            Submit.setEnabled(false);
         }
     }//GEN-LAST:event_FullTimerActionPerformed
 
@@ -405,6 +425,19 @@ EmployeeList employeeList = new EmployeeList();
         if (PartTimer.isSelected()){
             label_specifics.setText("Primary Alternative Occupation: ");
             textField_specifics.setText("");
+        } 
+        
+        if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && PartTimer.isSelected()
+                && textField_specifics.getText().length()>0 
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){          
+            Submit.setEnabled(true);   
+        }else {
+            Submit.setEnabled(false);
         }
     }//GEN-LAST:event_PartTimerActionPerformed
 
@@ -596,7 +629,33 @@ EmployeeList employeeList = new EmployeeList();
     }//GEN-LAST:event_SalaryKeyTyped
 
     private void RatingKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RatingKeyReleased
-        // TODO add your handling code here:
+        if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && textField_specifics.getText().length()>0 
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){          
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && PartTimer.isSelected()
+                && BoxPerformance.isSelected()
+                && Rating.getText().length()>0){
+            Submit.setEnabled(true);
+        }else if (Name.getText().length()>0 
+                && Department.getText().length()>0 
+                && Position.getText().length()>0 
+                && Salary.getText().length()>0 
+                && FullTimer.isSelected()
+                && textField_specifics.getText().length()>0){
+            Submit.setEnabled(true);
+        }else {
+            Submit.setEnabled(false);
+        }
     }//GEN-LAST:event_RatingKeyReleased
 
     private void RatingKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RatingKeyTyped
