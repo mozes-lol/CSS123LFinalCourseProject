@@ -33,4 +33,12 @@ public class Performance {
         }
         
     }
+
+    public int getPerformanceRating() {
+        return performanceRating;
+    }
+
+    public String getPerformanceStatus() {
+        return performanceStatus;
+    }
 }
