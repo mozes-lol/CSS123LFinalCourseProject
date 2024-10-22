@@ -42,7 +42,7 @@ public class Show extends javax.swing.JFrame implements ActionListener{
      */
     public Show() {
         initComponents();
-        
+        jTable1.setAutoCreateRowSorter(true);
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(150);
         jTable1.getColumnModel().getColumn(1).setPreferredWidth(100);
         jTable1.getColumnModel().getColumn(2).setPreferredWidth(100);
