@@ -11,15 +11,17 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import javax.swing.JButton;
-
+import com.group4.libraries.*;
+import com.group4.libraries.EmployeeList;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Andrew
  */
 public class Show extends javax.swing.JFrame implements ActionListener{
-    
-    ArrayList<Employee> employeeList = new ArrayList<Employee>();
+    EmployeeList employeeList = new EmployeeList();
     
     public Show(JButton jButton1, JButton jButton2) {
         jButton1.addActionListener(this);
@@ -123,11 +125,11 @@ public class Show extends javax.swing.JFrame implements ActionListener{
 
             },
             new String [] {
-                "Name", "Department", "Position", "Assigned Office", "Salary", "Rating"
+                "Name", "Department", "Position", "Notes", "Rating", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -178,7 +180,23 @@ public class Show extends javax.swing.JFrame implements ActionListener{
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_RefreshListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_RefreshListActionPerformed
-        
+        DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
+        JTable table = new JTable(tableModel);
+        for(Employee employee : employeeList.getEmployeeList())
+        {
+            employee.getPerformance().indicatePerformanceStatus();
+            Object[] employeeInsert = 
+                {
+                    employee.getName(),
+                    employee.getDepartment().getDepartmentName(),
+                    employee.getDepartment().getPosition(),
+                    employee.getEmployeeDescription(),
+                    employee.getPerformance().getPerformanceRating(),
+                    employee.getPerformance().getPerformanceStatus()                    
+                };
+            tableModel.addRow(employeeInsert);
+        }
+        employeeList.getEmployeeList().clear();
     }//GEN-LAST:event_jButton_RefreshListActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
