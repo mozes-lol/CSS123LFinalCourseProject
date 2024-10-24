@@ -12,16 +12,15 @@ import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import com.group4.libraries.*;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
 
 /**
  *
  * @author Andrew
  */
 public class Show extends javax.swing.JFrame implements ActionListener{
-    
-    ArrayList<Employee> employeeList = new ArrayList<Employee>();
+    EmployeeList employeeList = new EmployeeList();
     
     public Show(JButton jButton1, JButton jButton2) {
         jButton1.addActionListener(this);
@@ -125,11 +124,11 @@ public class Show extends javax.swing.JFrame implements ActionListener{
 
             },
             new String [] {
-                "Name", "Department", "Position", "Assigned Office", "Salary", "Rating"
+                "Name", "Department", "Position", "Notes", "Rating", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -180,48 +179,11 @@ public class Show extends javax.swing.JFrame implements ActionListener{
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_RefreshListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_RefreshListActionPerformed
-        ArrayList<Employee> employees = employeeList;
 
-
-    String[] columnHeaders = {"Name", "Department", "Position", "Assigned Office / Alt Occupation", "Salary", "Rating"};
-
-
-    String[][] employeeData = new String[employees.size()][6]; // 6 columns as specified
-
-
-    for (int i = 0; i < employees.size(); i++) {
-        Employee emp = employees.get(i);
-
-
-        employeeData[i][0] = emp.getEmployeeDescription(); 
-
-
-        if (emp instanceof FullTimer) {
-            FullTimer fullTimer = (FullTimer) emp;
-            employeeData[i][1] = fullTimer.getDepartment().getDepartmentName();
-            employeeData[i][2] = fullTimer.getDepartment().getPosition();
-            employeeData[i][3] = fullTimer.getAssignedOffice();
-            employeeData[i][4] = fullTimer.computeSalary("1000");
-        } else if (emp instanceof PartTimer) {
-            PartTimer partTimer = (PartTimer) emp;
-            employeeData[i][1] = partTimer.getDepartment().getDepartmentName();
-            employeeData[i][2] = partTimer.getDepartment().getPosition();
-            employeeData[i][3] = partTimer.getPrimaryAlternativeOccupation(); 
-            employeeData[i][4] = partTimer.computeSalary("500");
-        }
-
-
-        if (emp.getPerformance() != null) {
-            employeeData[i][5] = String.valueOf(emp.getPerformance().getPerformanceRating());
-        } else {
-            employeeData[i][5] = "N/A"; 
-        }
-    }
-
-    // Set the table model with the new data
-    DefaultTableModel tableModel = new DefaultTableModel(employeeData, columnHeaders);
-    jTable1.setModel(tableModel);
-       
+        Object[] testing = {"Test1","Test2","Test3","Test4",1,"Test5"};
+        DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
+        JTable table = new JTable(tableModel);
+        tableModel.addRow(testing);
     }//GEN-LAST:event_jButton_RefreshListActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
