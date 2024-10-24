@@ -12,6 +12,7 @@ import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import com.group4.libraries.*;
+import com.group4.libraries.EmployeeList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -184,6 +185,20 @@ public class Show extends javax.swing.JFrame implements ActionListener{
         DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
         JTable table = new JTable(tableModel);
         tableModel.addRow(testing);
+        for(Employee employee : employeeList.getEmployeeList())
+        {
+            employee.getPerformance().indicatePerformanceStatus();
+            Object[] employeeInsert = 
+                {
+                    employee.getName(),
+                    employee.getDepartment().getDepartmentName(),
+                    employee.getDepartment().getPosition(),
+                    employee.getEmployeeDescription(),
+                    employee.getPerformance().getPerformanceRating(),
+                    employee.getPerformance().getPerformanceStatus()                    
+                };
+            tableModel.addRow(employeeInsert);
+        }
     }//GEN-LAST:event_jButton_RefreshListActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
