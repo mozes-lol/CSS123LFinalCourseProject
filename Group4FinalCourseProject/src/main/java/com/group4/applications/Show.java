@@ -180,11 +180,8 @@ public class Show extends javax.swing.JFrame implements ActionListener{
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_RefreshListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_RefreshListActionPerformed
-
-        Object[] testing = {"Test1","Test2","Test3","Test4",1,"Test5"};
         DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
         JTable table = new JTable(tableModel);
-        tableModel.addRow(testing);
         for(Employee employee : employeeList.getEmployeeList())
         {
             employee.getPerformance().indicatePerformanceStatus();
@@ -199,6 +196,7 @@ public class Show extends javax.swing.JFrame implements ActionListener{
                 };
             tableModel.addRow(employeeInsert);
         }
+        employeeList.getEmployeeList().clear();
     }//GEN-LAST:event_jButton_RefreshListActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
