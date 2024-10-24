@@ -42,6 +42,11 @@ public class EmployeeList {
             fullTimer.setPerformance(new Performance(performancePerformanceRating));
             fullTimer.getPerformance().indicatePerformanceStatus();
         }
+        else
+        {
+            fullTimer.setPerformance(new Performance (-1));
+            fullTimer.getPerformance().indicatePerformanceStatus();
+        }
         // Salary Details Class
         fullTimer.employeeDescription = "Salary: " + fullTimer.computeSalary(salaryDetailsSalaryAmount) +
                 " Assigned Office: " + fullTimer.getAssignedOffice();
@@ -69,6 +74,11 @@ public class EmployeeList {
         if (isPerformanceGraded == true)
         {
             partTimer.setPerformance(new Performance(performancePerformanceRating));
+            partTimer.getPerformance().indicatePerformanceStatus();
+        }
+        else
+        {
+            partTimer.setPerformance(new Performance (-1));
             partTimer.getPerformance().indicatePerformanceStatus();
         }
         // Salary Details Class

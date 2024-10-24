@@ -28,8 +28,7 @@ public class Performance {
         else if (performanceRating >= 0) {performanceStatus = "PIP";}
         else
         {
-            performanceStatus = "Error:RatingTooLow";
-            System.out.println("ERROR: PERFORMANCE RATING IS NEGATIVE");
+            performanceStatus = "N/A";
         }
         
     }
