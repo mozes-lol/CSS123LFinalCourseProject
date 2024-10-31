@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import com.group4.libraries.*;
 import com.group4.libraries.EmployeeList;
+import java.awt.Color;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -81,7 +82,25 @@ public class Show extends javax.swing.JFrame implements ActionListener{
         jButton1.setToolTipText("");
         jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton1.setFocusPainted(false);
         jButton1.setFocusable(false);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton1MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jButton1MouseReleased(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -93,6 +112,23 @@ public class Show extends javax.swing.JFrame implements ActionListener{
         jButton_RefreshList.setText("Refresh List");
         jButton_RefreshList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton_RefreshList.setFocusable(false);
+        jButton_RefreshList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_RefreshListMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton_RefreshListMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton_RefreshListMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton_RefreshListMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jButton_RefreshListMouseReleased(evt);
+            }
+        });
         jButton_RefreshList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_RefreshListActionPerformed(evt);
@@ -119,7 +155,7 @@ public class Show extends javax.swing.JFrame implements ActionListener{
         jPanel2.setBackground(new java.awt.Color(237, 232, 208));
 
         jTable1.setBackground(new java.awt.Color(237, 232, 208));
-        jTable1.setForeground(new java.awt.Color(255, 204, 204));
+        jTable1.setForeground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -203,6 +239,46 @@ public class Show extends javax.swing.JFrame implements ActionListener{
         AddEmployee pi = new AddEmployee();
         pi.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+        jButton1.setBackground(new Color(235,235,235));
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        jButton1.setBackground(new Color(255,255,255));
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+        jButton1.setBackground(new Color(201,197,177));
+    }//GEN-LAST:event_jButton1MouseExited
+
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        jButton1.setBackground(new Color(255,255,255));
+    }//GEN-LAST:event_jButton1MousePressed
+
+    private void jButton1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseReleased
+        jButton1.setBackground(new Color(201,197,177));
+    }//GEN-LAST:event_jButton1MouseReleased
+
+    private void jButton_RefreshListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_RefreshListMouseClicked
+        jButton_RefreshList.setBackground(new Color(255,255,255));
+    }//GEN-LAST:event_jButton_RefreshListMouseClicked
+
+    private void jButton_RefreshListMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_RefreshListMouseEntered
+        jButton_RefreshList.setBackground(new Color(235,235,235));
+    }//GEN-LAST:event_jButton_RefreshListMouseEntered
+
+    private void jButton_RefreshListMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_RefreshListMouseExited
+        jButton_RefreshList.setBackground(new Color(201,197,177));
+    }//GEN-LAST:event_jButton_RefreshListMouseExited
+
+    private void jButton_RefreshListMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_RefreshListMousePressed
+        jButton_RefreshList.setBackground(new Color(255,255,255));
+    }//GEN-LAST:event_jButton_RefreshListMousePressed
+
+    private void jButton_RefreshListMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_RefreshListMouseReleased
+        jButton_RefreshList.setBackground(new Color(201,197,177));
+    }//GEN-LAST:event_jButton_RefreshListMouseReleased
 
     /**
      * @param args the command line arguments
