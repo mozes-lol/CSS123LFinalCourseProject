@@ -360,6 +360,7 @@ EmployeeList employeeList = new EmployeeList();
             {
                 employeeList.newFullTimerEmployee
                     (
+                        Name.getText(),
                         textField_specifics.getText(),
                         Department.getText(),
                         Position.getText(),
@@ -372,6 +373,7 @@ EmployeeList employeeList = new EmployeeList();
             {
                 employeeList.newFullTimerEmployee
                     (
+                        Name.getText(),
                         textField_specifics.getText(),
                         Department.getText(),
                         Position.getText(),
@@ -387,6 +389,7 @@ EmployeeList employeeList = new EmployeeList();
             {
                 employeeList.newPartTimerEmployee
                     (
+                        Name.getText(),
                         textField_specifics.getText(),
                         Department.getText(),
                         Position.getText(),
@@ -399,6 +402,7 @@ EmployeeList employeeList = new EmployeeList();
             {
                 employeeList.newPartTimerEmployee
                     (
+                        Name.getText(),
                         textField_specifics.getText(),
                         Department.getText(),
                         Position.getText(),

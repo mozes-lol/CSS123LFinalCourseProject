@@ -22,6 +22,7 @@ public class EmployeeList {
     
     public void newFullTimerEmployee
         (
+            String name,
             String fullTimerAssignedOffice,
             String departmentDepartmentName,
             String departmentPosition,
@@ -31,7 +32,7 @@ public class EmployeeList {
         )
     {
         // Full Timer Class
-        FullTimer fullTimer = new FullTimer(fullTimerAssignedOffice, "Employee");
+        FullTimer fullTimer = new FullTimer(fullTimerAssignedOffice, name);
         // Department Class
         fullTimer.setDepartment(new Department());
         fullTimer.getDepartment().setDepartmentName(departmentDepartmentName);
@@ -56,6 +57,7 @@ public class EmployeeList {
         
     public void newPartTimerEmployee
         (
+            String name,
             String partPrimaryAlternativeOccupation,
             String departmentDepartmentName,
             String departmentPosition,
@@ -65,7 +67,7 @@ public class EmployeeList {
         )
     {
         // Full Timer Class
-        PartTimer partTimer = new PartTimer(partPrimaryAlternativeOccupation, "Employee");
+        PartTimer partTimer = new PartTimer(partPrimaryAlternativeOccupation, name);
         // Department Class
         partTimer.setDepartment(new Department());
         partTimer.getDepartment().setDepartmentName(departmentDepartmentName);
