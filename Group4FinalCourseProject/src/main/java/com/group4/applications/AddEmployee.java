@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import com.group4.libraries.Employee;
 import com.group4.libraries.EmployeeList;
+import java.awt.Color;
 
 /**
  *
@@ -134,12 +135,27 @@ EmployeeList employeeList = new EmployeeList();
 
         Submit.setBackground(new java.awt.Color(201, 197, 177));
         Submit.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        Submit.setForeground(new java.awt.Color(0, 0, 0));
         Submit.setText("Submit");
+        Submit.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Submit.setEnabled(false);
+        Submit.setFocusPainted(false);
         Submit.setFocusable(false);
         Submit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SubmitMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 SubmitMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SubmitMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                SubmitMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                SubmitMouseReleased(evt);
             }
         });
         Submit.addActionListener(new java.awt.event.ActionListener() {
@@ -215,31 +231,28 @@ EmployeeList employeeList = new EmployeeList();
                         .addGap(22, 22, 22)
                         .addComponent(PartTimer, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(FullTimer, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FullTimer, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(label_specifics, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(label_specifics, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(21, 21, 21)
-                                        .addComponent(BoxPerformance, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel6))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Rating)
-                                    .addComponent(textField_specifics, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Position)
-                                    .addComponent(Department, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Name, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Salary, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGap(21, 21, 21)
+                                .addComponent(BoxPerformance, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Rating)
+                            .addComponent(textField_specifics, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Position)
+                            .addComponent(Department, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Name, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Salary, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,7 +306,9 @@ EmployeeList employeeList = new EmployeeList();
     }// </editor-fold>//GEN-END:initComponents
 
     private void SubmitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitMouseEntered
-        // TODO add your handling code here:
+        if (Submit.isEnabled()) {
+            Submit.setBackground(new Color(191,187,167));
+        }
     }//GEN-LAST:event_SubmitMouseEntered
 
     private void PositionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PositionActionPerformed
@@ -654,6 +669,30 @@ EmployeeList employeeList = new EmployeeList();
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowClosing
+
+    private void SubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitMouseClicked
+        if (Submit.isEnabled()) {
+            Submit.setBackground(new Color(191,187,167));
+        }
+    }//GEN-LAST:event_SubmitMouseClicked
+
+    private void SubmitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitMouseExited
+        if (Submit.isEnabled()) {
+            Submit.setBackground(new Color(201,197,177));
+        }
+    }//GEN-LAST:event_SubmitMouseExited
+
+    private void SubmitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitMousePressed
+        if (Submit.isEnabled()) {
+            Submit.setBackground(new Color(191,187,167));
+        }
+    }//GEN-LAST:event_SubmitMousePressed
+
+    private void SubmitMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitMouseReleased
+        if (Submit.isEnabled()) {
+            Submit.setBackground(new Color(191,187,167));
+        }
+    }//GEN-LAST:event_SubmitMouseReleased
 
     /**
      * @param args the command line arguments
