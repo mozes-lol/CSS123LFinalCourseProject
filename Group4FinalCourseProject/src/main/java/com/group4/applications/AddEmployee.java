@@ -210,6 +210,11 @@ EmployeeList employeeList = new EmployeeList();
         });
 
         Rating.setEnabled(false);
+        Rating.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RatingActionPerformed(evt);
+            }
+        });
         Rating.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 RatingKeyReleased(evt);
@@ -646,6 +651,7 @@ EmployeeList employeeList = new EmployeeList();
                 && Position.getText().length()>0 
                 && Salary.getText().length()>0 
                 && PartTimer.isSelected()
+                && textField_specifics.getText().length()>0
                 && BoxPerformance.isSelected()
                 && Rating.getText().length()>0){
             Submit.setEnabled(true);
@@ -697,6 +703,10 @@ EmployeeList employeeList = new EmployeeList();
             Submit.setBackground(new Color(191,187,167));
         }
     }//GEN-LAST:event_SubmitMouseReleased
+
+    private void RatingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RatingActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RatingActionPerformed
 
     /**
      * @param args the command line arguments
