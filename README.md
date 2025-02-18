@@ -5,7 +5,7 @@ This is an application for managing employees and their performance in the compa
 
 This project is a submission for the final course project for CSS123L (School of Information Technology).
 
-## How to open the project file?
+## Required IDE to open the project file
 Installed Apache Netbeans IDE 22 (later versions may cause build errors)
 
 ## Documentation
