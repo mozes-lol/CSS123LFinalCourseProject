@@ -3,7 +3,7 @@
 
 This is an application for managing employees and their performance in the company.
 
-This project is a submission for the final course project for course CSS123L (School of Information Technology).
+This project is a submission for the final course project for CSS123L (School of Information Technology).
 
 ## How to open the project file?
 Installed Apache Netbeans IDE 22 (later versions may cause build errors)
