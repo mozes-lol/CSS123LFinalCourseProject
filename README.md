@@ -1,5 +1,5 @@
 # Employee Management Application
->(Mapúa University, SY 2024-2025)
+*(Mapúa University, SY 2024-2025)*
 
 This is an application for managing employees and their performance in the company.
 
