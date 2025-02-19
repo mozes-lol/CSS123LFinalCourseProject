@@ -1,5 +1,5 @@
 # Employee Management Application
-*(Mapúa University, SY 2024-2025)*
+*(Mapúa University, (School of Information Technology, SY 2024-2025)*
 
 ![image](https://github.com/user-attachments/assets/f5a1a802-f1d8-4028-9c26-77f24efe41f3)
 
