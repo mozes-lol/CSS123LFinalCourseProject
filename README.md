@@ -12,4 +12,4 @@ a submission for the final course project for CSS123L (School of Information Tec
 [Apache Netbeans IDE 22](https://netbeans.apache.org/front/main/download/nb22/) (later versions may cause build errors)
 
 ## Documentation
-You may check the [project documentation](https://docs.google.com/document/d/1pBBKUfWra1ZWXhUTKDfKxwLw-_1SZkrXSIZ_kAUwsXc) for full reference.
+You may refer to the [project documentation](https://docs.google.com/document/d/1pBBKUfWra1ZWXhUTKDfKxwLw-_1SZkrXSIZ_kAUwsXc) for more information.
